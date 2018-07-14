@@ -5,7 +5,7 @@ package pyslice
  */
 internal fun isValid(slicer: String): Boolean {
   return when (slicer) {
-    "", ":", "::" -> true
+    "", ":", "::", "0:" -> true
     else -> false
   }
 }
