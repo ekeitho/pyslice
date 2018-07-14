@@ -13,4 +13,9 @@ internal class SliceHelpersTest {
   fun `GIVEN a single colon string WHEN isValid THEN it should return true`() {
     assert(isValid(":"))
   }
+
+  @Test
+  fun `GIVEN a double colon string WHEN isValid THEN it should return true`() {
+    assert(isValid("::"))
+  }
 }
