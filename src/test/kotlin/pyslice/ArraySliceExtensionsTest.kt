@@ -1,6 +1,8 @@
 package pyslice
 
+import junit.framework.Assert.fail
 import org.junit.Test
+import kotlin.test.assertFailsWith
 
 class ArraySliceExtensionsTest {
 
@@ -32,5 +34,13 @@ class ArraySliceExtensionsTest {
   fun `GIVEN only 0 as stop index WHEN invoke index access operator THEN it should return an empty array`() {
     val a = arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
     assert(emptyArray<Int>().contentEquals(a[":0"]))
+  }
+
+  @Test
+  fun `GIVEN only 0 as step WHEN invoke index access operator THEN it should throw an IAE error`() {
+    val a = arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    assertFailsWith(IllegalArgumentException::class) {
+      a["::0"]
+    }
   }
 }
