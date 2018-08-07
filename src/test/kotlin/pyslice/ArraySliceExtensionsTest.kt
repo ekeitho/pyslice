@@ -1,6 +1,6 @@
 package pyslice
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class ArraySliceExtensionsTest {
 
